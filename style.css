@@ -77,7 +77,8 @@ a {
 
 /* -------------------------header------------------------------ */
 
-.hidden-menu {
+/*!I think there is no need for this*/
+/* .hidden-menu {
   position: fixed;
   z-index: 2;
   height: 100vh;
@@ -93,7 +94,7 @@ a {
 .hidden-menu a {
   color: white;
   font-size: 4rem;
-}
+} */
 
 .header {
   box-shadow: 0px 2px 29px -15px black;
