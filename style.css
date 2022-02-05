@@ -158,6 +158,15 @@ nav {
 
 .about-leftside {
   flex: 1 40rem;
+  position: relative;
+}
+.about-leftside h1 {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  letter-spacing: 2rem;
 }
 .about-leftside img {
   height: 100%;
