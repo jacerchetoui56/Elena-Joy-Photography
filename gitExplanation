@@ -1,0 +1,19 @@
+initialise git ==> [git init]
+add a file to the staging area ==> [git add <name>] or [git add .] (the point means "All")
+commit the change and adding it to the repository ==> [git commit -m "<description of commitment>"]
+seeing the state of the files ==> [git status]
+seeing the history of commitments ==> [git log]
+
+- if you want to ignore some files :
+
+  - create a file names .gitignore
+  - name the files you don't want Git to track (ex: \*.log)
+
+- branch explanation :
+  -(look at the image named branchDrow)
+  - the branch is mainly MAIN or MASTER which is the stage u're at with ur project
+    to know the branch u're working in => [git branch]
+  - when u want to try new features but at the same time keeping ur current work to restore it in case
+    u mess things up => so u create new branch by tapping => [git branch <name>]
+    and do what u want to do and then u can come and MERGE
+    ur branch with your MAIN branch by using this command => [git merge]
