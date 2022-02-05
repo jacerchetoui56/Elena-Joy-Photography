@@ -207,11 +207,4 @@ nav {
   display: flex;
 }
 
-.gallery-left {
-  flex: 40rem;
-}
-.gallery-right {
-  flex: 40rem;
-}
-
 /* ------------------------------------------------------------------ */
