@@ -17,3 +17,4 @@ seeing the history of commitments ==> [git log]
     u mess things up => so u create new branch by tapping => [git branch <name>]
     and do what u want to do and then u can come and MERGE
     ur branch with your MAIN branch by using this command => [git merge]
+  - to delete a branch => [git branch -d <name>]
