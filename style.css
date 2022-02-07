@@ -120,7 +120,7 @@ nav {
   color: black;
 }
 
-.test-links {
+.hidden-menu {
   position: absolute;
   top: 0;
   right: 0;
@@ -133,7 +133,7 @@ nav {
   background-color: #414141;
   transform: translateX(-100%);
 }
-.test-links a {
+.hidden-menu a {
   color: white;
   text-decoration: underline;
   font-size: 3.5rem;
