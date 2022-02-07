@@ -77,22 +77,6 @@ a {
 
 /* -------------------------header------------------------------ */
 
-/*!I think there is no need for this , I'll figure out a solution*/
-/* .hidden-menu {
-  position: fixed;
-  z-index: 2;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-left: -102%;
-  transition: ease all 1s;
-}
-*/
-
 .header {
   box-shadow: 0px 2px 29px -15px black;
 }
@@ -111,6 +95,7 @@ nav {
   font-family: "Vibes", sans-serif;
   color: black;
 }
+
 .links {
   flex: 1 40rem;
   display: flex;
@@ -120,24 +105,6 @@ nav {
   color: black;
 }
 
-.hidden-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #414141;
-  transform: translateX(-100%);
-}
-.hidden-menu a {
-  color: white;
-  text-decoration: underline;
-  font-size: 3.5rem;
-}
 .openlinks {
   z-index: 3;
   position: relative;
@@ -145,12 +112,17 @@ nav {
   height: 3rem;
   display: none;
 }
+.openlinks:hover {
+  cursor: pointer;
+}
+/*!LLLLLLLLLLLLLLZEEEEEEM TRIGUEL LINES HHHHHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO*/
 .openlinks .line1 {
   position: absolute;
   top: 3px;
   background-color: var(--background-color);
   width: 100%;
   height: 15%;
+  transition: ease all 1s;
 }
 .openlinks .line2 {
   position: absolute;
@@ -158,7 +130,9 @@ nav {
   transform: translateY(-50%);
   background-color: var(--background-color);
   width: 100%;
+
   height: 15%;
+  transition: ease all 1s;
 }
 .openlinks .line3 {
   position: absolute;
@@ -166,8 +140,23 @@ nav {
   background-color: var(--background-color);
   width: 100%;
   height: 15%;
+  transition: ease all 1s;
 }
 
+.reshape .line1 {
+  background-color: white;
+  transform: rotateZ(45deg) translateY(300%);
+  transition: ease all 01s;
+}
+.reshape .line2 {
+  opacity: 0;
+  transition: ease all 01s;
+}
+.reshape .line3 {
+  background-color: white;
+  transform: rotateZ(-45deg) translateY(-300%);
+  transition: ease all 01s;
+}
 /* ---------------------------------------------------------- */
 /* -----------------------------home-------------------------------------------- */
 .home {
@@ -176,6 +165,7 @@ nav {
   flex-wrap: wrap;
   width: 95%;
   margin: 0 0 0 auto;
+  overflow: hidden;
 }
 .leftside {
   height: 100%;
@@ -199,12 +189,64 @@ nav {
   justify-content: center;
   align-items: center;
   flex: 1 40rem;
+  position: relative;
 }
 
-.rightside img {
+.rightside .cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------- */
+
+@keyframes enter {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  }
+  to {
+    transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
+  }
+}
+@keyframes shaking {
+  from {
+    transform: rotateZ(-5deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.plant1 {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -20%;
+  height: 80%;
+  transform: rotateX(-90deg);
+  /* the plant exists but we cant see it because it is rotated in a way that we can't see it */
+  transform-origin: bottom;
+  animation: enter 1.5s ease-in-out 0.5s,
+    shaking 2.5s infinite ease alternate-reverse 2s;
+}
+.plant2 {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 40%;
+  height: 80%;
+  transform: rotateX(-90deg);
+  /* we want the plant to look like it's waking up XD  */
+  transform-origin: bottom;
+  /* transform-origin bel fallegui kima l balouna elli bech ydour 3liha l element 
+  check this url : https://www.w3schools.com/csSref/trycss3_transform-origin_inuse.htm */
+  animation: enter 1.5s ease-in-out 0.5s forwards,
+    shaking 2.5s infinite ease alternate-reverse 2s;
+  /* we did alternate-reverse because we want the plant to move from that position not the forwards position  */
+  /* we have two animations : for the entering so it is only forwards and for shaking so it is alternate  */
 }
 
 .gallery-btn {
@@ -395,9 +437,7 @@ footer .social-media {
     width: 100%;
     margin: 0;
   }
-  .logo {
-    text-align: center;
-  }
+
   .home .leftside p {
     padding: 5rem 5rem;
   }
@@ -446,12 +486,34 @@ footer .social-media {
   header .logo {
     text-align: start;
   }
-  header .links {
-    display: none;
-  }
+
   .openlinks {
     display: block;
   }
+  /* ---- classes to toggle ---  */
+  .links {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #414141;
+    transition: ease-in-out all 1s;
+  }
+  .links a {
+    color: white;
+    text-decoration: underline;
+    font-size: 3.5rem;
+  }
+  .slide {
+    transform: translateX(-100%);
+  }
+
+  /* ---------- */
 }
 
 @media screen and (max-width: 617px) {
