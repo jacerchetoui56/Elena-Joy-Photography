@@ -94,12 +94,8 @@ header .logo {
   font-family: "Vibes", sans-serif;
   color: black;
 }
-<<<<<<< HEAD
-header .links {
-=======
 
 .links {
->>>>>>> nextStep
   flex: 1 40rem;
   display: flex;
   justify-content: space-around;
@@ -118,7 +114,6 @@ header .links a {
 .openlinks:hover {
   cursor: pointer;
 }
-/*!LLLLLLLLLLLLLLZEEEEEEM TRIGUEL LINES HHHHHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO*/
 .openlinks .line1 {
   position: absolute;
   top: 3px;
