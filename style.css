@@ -77,22 +77,6 @@ a {
 
 /* -------------------------header------------------------------ */
 
-/*!I think there is no need for this , I'll figure out a solution*/
-/* .hidden-menu {
-  position: fixed;
-  z-index: 2;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-left: -102%;
-  transition: ease all 1s;
-}
-*/
-
 .header {
   box-shadow: 0px 2px 29px -15px black;
 }
@@ -105,18 +89,17 @@ nav {
   padding: 2rem 0;
 }
 
-.logo {
+header .logo {
   flex: 1 40rem;
-  font-size: 1.5rem;
   font-family: "Vibes", sans-serif;
   color: black;
 }
-.links {
+header .links {
   flex: 1 40rem;
   display: flex;
   justify-content: space-around;
 }
-.links a {
+header .links a {
   color: black;
 }
 
@@ -377,9 +360,7 @@ footer .social-media {
     width: 100%;
     margin: 0;
   }
-  .logo {
-    text-align: center;
-  }
+
   .home .leftside p {
     padding: 5rem 5rem;
   }
