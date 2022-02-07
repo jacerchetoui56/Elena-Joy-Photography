@@ -141,6 +141,11 @@ header .links a {
   transition: ease all 1s;
 }
 
+.reshape {
+  position: fixed; /*so we can not scroll when the hidden menu is displayed*/
+  top: 2rem;
+  right: 2rem;
+}
 .reshape .line1 {
   background-color: white;
   transform: rotateZ(45deg) translateY(300%);
