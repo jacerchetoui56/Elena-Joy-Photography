@@ -94,7 +94,12 @@ header .logo {
   font-family: "Vibes", sans-serif;
   color: black;
 }
+<<<<<<< HEAD
 header .links {
+=======
+
+.links {
+>>>>>>> nextStep
   flex: 1 40rem;
   display: flex;
   justify-content: space-around;
@@ -110,12 +115,17 @@ header .links a {
   height: 3rem;
   display: none;
 }
+.openlinks:hover {
+  cursor: pointer;
+}
+/*!LLLLLLLLLLLLLLZEEEEEEM TRIGUEL LINES HHHHHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO*/
 .openlinks .line1 {
   position: absolute;
   top: 3px;
   background-color: var(--background-color);
   width: 100%;
   height: 15%;
+  transition: ease all 1s;
 }
 .openlinks .line2 {
   position: absolute;
@@ -123,7 +133,9 @@ header .links a {
   transform: translateY(-50%);
   background-color: var(--background-color);
   width: 100%;
+
   height: 15%;
+  transition: ease all 1s;
 }
 .openlinks .line3 {
   position: absolute;
@@ -131,8 +143,23 @@ header .links a {
   background-color: var(--background-color);
   width: 100%;
   height: 15%;
+  transition: ease all 1s;
 }
 
+.reshape .line1 {
+  background-color: white;
+  transform: rotateZ(45deg) translateY(300%);
+  transition: ease all 01s;
+}
+.reshape .line2 {
+  opacity: 0;
+  transition: ease all 01s;
+}
+.reshape .line3 {
+  background-color: white;
+  transform: rotateZ(-45deg) translateY(-300%);
+  transition: ease all 01s;
+}
 /* ---------------------------------------------------------- */
 /* -----------------------------home-------------------------------------------- */
 .home {
@@ -141,6 +168,7 @@ header .links a {
   flex-wrap: wrap;
   width: 95%;
   margin: 0 0 0 auto;
+  overflow: hidden;
 }
 .leftside {
   height: 100%;
@@ -164,12 +192,64 @@ header .links a {
   justify-content: center;
   align-items: center;
   flex: 1 40rem;
+  position: relative;
 }
 
-.rightside img {
+.rightside .cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------- */
+
+@keyframes enter {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  }
+  to {
+    transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
+  }
+}
+@keyframes shaking {
+  from {
+    transform: rotateZ(-5deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.plant1 {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -20%;
+  height: 80%;
+  transform: rotateX(-90deg);
+  /* the plant exists but we cant see it because it is rotated in a way that we can't see it */
+  transform-origin: bottom;
+  animation: enter 1.5s ease-in-out 0.5s,
+    shaking 2.5s infinite ease alternate-reverse 2s;
+}
+.plant2 {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 40%;
+  height: 80%;
+  transform: rotateX(-90deg);
+  /* we want the plant to look like it's waking up XD  */
+  transform-origin: bottom;
+  /* transform-origin bel fallegui kima l balouna elli bech ydour 3liha l element 
+  check this url : https://www.w3schools.com/csSref/trycss3_transform-origin_inuse.htm */
+  animation: enter 1.5s ease-in-out 0.5s forwards,
+    shaking 2.5s infinite ease alternate-reverse 2s;
+  /* we did alternate-reverse because we want the plant to move from that position not the forwards position  */
+  /* we have two animations : for the entering so it is only forwards and for shaking so it is alternate  */
 }
 
 .gallery-btn {
@@ -409,12 +489,34 @@ footer .social-media {
   header .logo {
     text-align: start;
   }
-  header .links {
-    display: none;
-  }
+
   .openlinks {
     display: block;
   }
+  /* ---- classes to toggle ---  */
+  .links {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #414141;
+    transition: ease-in-out all 1s;
+  }
+  .links a {
+    color: white;
+    text-decoration: underline;
+    font-size: 3.5rem;
+  }
+  .slide {
+    transform: translateX(-100%);
+  }
+
+  /* ---------- */
 }
 
 @media screen and (max-width: 617px) {
