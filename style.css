@@ -490,6 +490,7 @@ footer .social-media {
   }
   /* ---- classes to toggle ---  */
   .links {
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 100%;
@@ -502,7 +503,7 @@ footer .social-media {
     background-color: #414141;
     transition: ease-in-out all 1s;
   }
-  .links a {
+  header .links a {
     color: white;
     text-decoration: underline;
     font-size: 3.5rem;
